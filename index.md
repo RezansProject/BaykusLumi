@@ -60,9 +60,14 @@ Oturum bilgileri cihazda şifreli olarak saklanır. Tüm veriler şifreli bağla
 
 ## 7. Saklama ve silme
 
-Verileriniz, hesabınız aktif olduğu sürece saklanır. Hesabınızın ve tüm verilerinizin
-silinmesini istemek için [e-posta adresin] adresine yazabilirsiniz; talebiniz makul
-bir süre içinde yerine getirilir.
+Verileriniz, hesabınız aktif olduğu sürece saklanır.
+
+**Hesabınızı ve tüm verilerinizi silmek için:** Uygulamada **Profil → Hesabımı Kalıcı
+Olarak Sil** yolunu izleyin. Bu işlem hesabınızı ve tüm çalışma, sınav, tılsım ve profil
+verilerinizi kalıcı olarak siler; geri alınamaz.
+
+Uygulamaya erişiminiz yoksa, silme talebinizi [e-posta adresin] adresine gönderebilirsiniz;
+talebiniz makul bir süre içinde yerine getirilir.
 
 ## 8. Haklarınız (KVKK / GDPR)
 

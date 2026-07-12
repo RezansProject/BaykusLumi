@@ -2,8 +2,8 @@
 
 **Son güncelleme:** 12.07.2027
 
-**Veri Sorumlusu:** [Umut Rezan Azizoğlu]
-**İletişim:** [rezanapp@gmail.com]
+**Veri Sorumlusu:** Umut Rezan Azizoğlu
+**İletişim:** rezanapp@gmail.com
 
 ---
 
@@ -58,16 +58,43 @@ Her kullanıcı yalnızca kendi verisine erişebilir (satır düzeyi güvenlik /
 Oturum bilgileri cihazda şifreli olarak saklanır. Tüm veriler şifreli bağlantı
 (HTTPS) üzerinden iletilir.
 
-## 7. Saklama ve silme
+<a id="hesap-silme"></a>
+## 7. Hesap Silme ve Veri Saklama
 
-Verileriniz, hesabınız aktif olduğu sürece saklanır.
+**Uygulama:** Baykuş Lumi
+**Geliştirici:** Umut Rezan Azizoğlu
 
-**Hesabınızı ve tüm verilerinizi silmek için:** Uygulamada **Profil → Hesabımı Kalıcı
-Olarak Sil** yolunu izleyin. Bu işlem hesabınızı ve tüm çalışma, sınav, tılsım ve profil
-verilerinizi kalıcı olarak siler; geri alınamaz.
+### Hesabınızı nasıl silersiniz?
 
-Uygulamaya erişiminiz yoksa, silme talebinizi [e-posta adresin] adresine gönderebilirsiniz;
-talebiniz makul bir süre içinde yerine getirilir.
+**Uygulama içinden (önerilen):**
+1. Uygulamayı açın ve hesabınıza giriş yapın
+2. Ana ekranın sağ üstündeki **avatar simgesine** dokunun (Profil ekranı açılır)
+3. Sayfanın en altına inin
+4. **"Hesabımı Kalıcı Olarak Sil"** butonuna dokunun
+5. Çıkan onay penceresinde **"Evet, Sil"** seçeneğini onaylayın
+
+**Uygulamaya erişiminiz yoksa:**
+Silme talebinizi [e-posta adresin] adresine gönderin. Talebiniz 30 gün içinde
+yerine getirilir.
+
+### Silinen veriler
+
+Hesap silme işlemi geri alınamaz ve şu verilerin **tamamı kalıcı olarak silinir**:
+
+- Hesap bilgileriniz (e-posta adresi, kimlik doğrulama kaydı)
+- Profil bilgileriniz (büyücü adı, gerçek ad, sınıf, okul, avatar, rütbe)
+- Tüm çalışma kayıtlarınız (ders, konu, süre, notlar)
+- Tüm sınav kayıtlarınız (ders, sınav adı, puan, notlar)
+- Kazandığınız tüm tılsımlar ve günlük hedef kayıtlarınız
+
+### Saklanan veriler
+
+Hesap silindikten sonra **hiçbir kişisel veriniz saklanmaz**. Fotoğraf analizi
+özelliği kullanıldığında görseller zaten sunucularımızda saklanmaz; yalnızca
+analiz süresince işlenir ve sonrasında atılır.
+
+Yedekleme sistemlerimizde bulunabilecek teknik kopyalar en geç **30 gün** içinde
+otomatik olarak silinir.
 
 ## 8. Haklarınız (KVKK / GDPR)
 

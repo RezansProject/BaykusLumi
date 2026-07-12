@@ -74,7 +74,7 @@ Oturum bilgileri cihazda şifreli olarak saklanır. Tüm veriler şifreli bağla
 5. Çıkan onay penceresinde **"Evet, Sil"** seçeneğini onaylayın
 
 **Uygulamaya erişiminiz yoksa:**
-Silme talebinizi [e-posta adresin] adresine gönderin. Talebiniz 30 gün içinde
+Silme talebinizi rezanapp@gmail.com adresine gönderin. Talebiniz 30 gün içinde
 yerine getirilir.
 
 ### Silinen veriler

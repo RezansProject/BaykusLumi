@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şifre Sıfırla — Baykuş Lumi</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: #0B1026; color: #E8ECFF; padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .kart {
+      width: 100%; max-width: 420px; background: #161B3D; border: 1px solid #2A3161;
+      border-radius: 20px; padding: 32px;
+    }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    .alt { color: #9AA3C7; font-size: 14px; margin: 0 0 24px; }
+    .baykus { font-size: 48px; text-align: center; margin-bottom: 12px; }
+    label { display: block; font-size: 14px; color: #9AA3C7; margin-bottom: 6px; }
+    input {
+      width: 100%; padding: 14px; margin-bottom: 16px; border-radius: 12px;
+      border: 1px solid #2A3161; background: #0F1533; color: #E8ECFF; font-size: 16px;
+    }
+    button {
+      width: 100%; padding: 15px; border: none; border-radius: 12px;
+      background: #F5A524; color: #1A1205; font-size: 16px; font-weight: 700; cursor: pointer;
+    }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    .mesaj { margin-top: 16px; padding: 12px; border-radius: 10px; font-size: 14px; text-align: center; }
+    .basari { background: rgba(74,222,128,.12); color: #4ADE80; }
+    .hata { background: rgba(244,114,182,.12); color: #F472B6; }
+  </style>
+</head>
+<body>
+  <div class="kart">
+    <div class="baykus">🦉</div>
+    <h1>Yeni Büyü Sözcüğün</h1>
+    <p class="alt">Yeni şifreni belirle, sonra uygulamaya dönüp giriş yap.</p>
+
+    <div id="form">
+      <label for="sifre">Yeni Şifre (en az 6 karakter)</label>
+      <input type="password" id="sifre" placeholder="••••••••" autocomplete="new-password">
+
+      <label for="sifre2">Şifreyi Tekrar Gir</label>
+      <input type="password" id="sifre2" placeholder="••••••••" autocomplete="new-password">
+
+      <button id="btn">Şifremi Güncelle</button>
+    </div>
+
+    <div id="mesaj"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Bu iki değer herkese açıktır (publishable key) — güvenlidir.
+    const SUPABASE_URL = "https://enjilcrxzewcjwhkackt.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_fq0O507tHk7gZsVCYnJ7kg_AjflZg6X";
+
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+      auth: { detectSessionInUrl: true, flowType: "implicit" }
+    });
+
+    const mesajEl = document.getElementById("mesaj");
+    const formEl = document.getElementById("form");
+    const btn = document.getElementById("btn");
+
+    function mesajGoster(metin, tip) {
+      mesajEl.innerHTML = '<div class="mesaj ' + tip + '">' + metin + "</div>";
+    }
+
+    // Linkteki token ile oturum kuruldu mu kontrol et
+    supabase.auth.getSession().then(({ data }) => {
+      if (!data.session) {
+        formEl.style.display = "none";
+        mesajGoster(
+          "Bu bağlantı geçersiz ya da süresi dolmuş. Uygulamadan yeni bir sıfırlama isteği gönder.",
+          "hata"
+        );
+      }
+    });
+
+    btn.addEventListener("click", async () => {
+      const s1 = document.getElementById("sifre").value;
+      const s2 = document.getElementById("sifre2").value;
+
+      if (s1.length < 6) return mesajGoster("Şifre en az 6 karakter olmalı.", "hata");
+      if (s1 !== s2) return mesajGoster("Şifreler eşleşmiyor.", "hata");
+
+      btn.disabled = true;
+      btn.textContent = "Güncelleniyor...";
+
+      const { error } = await supabase.auth.updateUser({ password: s1 });
+
+      if (error) {
+        mesajGoster("Şifre güncellenemedi: " + error.message, "hata");
+        btn.disabled = false;
+        btn.textContent = "Şifremi Güncelle";
+      } else {
+        formEl.style.display = "none";
+        mesajGoster("✨ Şifren güncellendi! Şimdi uygulamaya dönüp yeni şifrenle giriş yapabilirsin.", "basari");
+      }
+    });
+  </script>
+</body>
+</html>

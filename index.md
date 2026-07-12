@@ -96,6 +96,16 @@ analiz süresince işlenir ve sonrasında atılır.
 Yedekleme sistemlerimizde bulunabilecek teknik kopyalar en geç **30 gün** içinde
 otomatik olarak silinir.
 
+### Verilerinizin bir kısmını silme
+
+Hesabınızı silmeden de verilerinizi silebilirsiniz:
+- **Çalışma kaydı silme:** Çalışma ekranında, silmek istediğiniz kaydın yanındaki
+  çöp kutusu simgesine dokunun.
+- **Sınav kaydı silme:** Sihir Gücü ekranında, silmek istediğiniz sınavın yanındaki
+  çöp kutusu simgesine dokunun.
+- **Profil bilgisi silme:** Profil ekranında ilgili alanları (gerçek ad, okul)
+  boşaltıp kaydedin.
+
 ## 8. Haklarınız (KVKK / GDPR)
 
 Kişisel verilerinize erişme, düzeltme, silme ve işlemeye itiraz etme haklarına
